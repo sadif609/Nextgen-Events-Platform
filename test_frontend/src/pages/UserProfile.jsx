@@ -59,7 +59,7 @@ function UserProfile() {
         formData.append('profileImage', editData.profileImage);
       }
 
-      const response = await axios.put(`http://localhost:5000/api/users/${user._id}`, formData, {
+      const response = await axios.put(`https://nextgen-events-backend-b34m.onrender.com/api/users/${user._id}`, formData, {
         headers: {
           'Content-Type': 'multipart/form-data'
         }
@@ -118,7 +118,7 @@ function UserProfile() {
               >
                 {user.profileImageUrl ? (
                   <img 
-                    src={`http://localhost:5000${user.profileImageUrl}`} 
+                    src={`https://nextgen-events-backend-b34m.onrender.com${user.profileImageUrl}`} 
                     alt="Profile" 
                     style={{
                       width: '120px',

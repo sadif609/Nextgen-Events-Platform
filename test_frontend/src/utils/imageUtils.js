@@ -1,4 +1,4 @@
-export const getImageUrl = (event, baseUrl = 'http://localhost:5000') => {
+export const getImageUrl = (event, baseUrl = 'https://nextgen-events-backend-b34m.onrender.com') => {
   const banner = event?.imageUrl || event?.banner || event?.bannerUrl;
   
   if (!banner) {

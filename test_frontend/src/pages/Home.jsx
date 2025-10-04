@@ -24,7 +24,7 @@ const Home = () => {
   useEffect(() => {
     const fetchEvents = async () => {
       try {
-        const res = await fetch("http://localhost:5000/api/events");
+        const res = await fetch("https://nextgen-events-backend-b34m.onrender.com/api/events");
         const data = await res.json();
         const eventsArray = Array.isArray(data) ? data : [];
         setEvents(eventsArray);
@@ -34,7 +34,7 @@ const Home = () => {
             const shuffled = [...eventsArray].sort(() => 0.5 - Math.random());
             const randomFeatured = shuffled.slice(0, 3).map(event => ({
               title: event.title, // Dynamic event title
-              imageUrl: event.imageUrl.startsWith('http') ? event.imageUrl : `http://localhost:5000${event.imageUrl}`, // Handle both external and local images
+              imageUrl: event.imageUrl.startsWith('http') ? event.imageUrl : `https://nextgen-events-backend-b34m.onrender.com${event.imageUrl}`, // Handle both external and local images
             }));
           
           // If less than 3 events, fill with defaults
@@ -80,7 +80,7 @@ const Home = () => {
         
         setFeaturedEvents(prev => [{
           title: randomEvent.title, // Dynamic event title
-          imageUrl: randomEvent.imageUrl.startsWith('http') ? randomEvent.imageUrl : `http://localhost:5000${randomEvent.imageUrl}`,
+          imageUrl: randomEvent.imageUrl.startsWith('http') ? randomEvent.imageUrl : `https://nextgen-events-backend-b34m.onrender.com${randomEvent.imageUrl}`,
         }]);
       }, 6000); // Change every 6 seconds for smoother experience
       
@@ -172,7 +172,7 @@ const Home = () => {
                   <div key={event._id} className="event-card home-event-card">
                     <div className="event-card-image-wrapper">
                       <img
-                        src={event.imageUrl.startsWith('http') ? event.imageUrl : `http://localhost:5000${event.imageUrl}`}
+                        src={event.imageUrl.startsWith('http') ? event.imageUrl : `https://nextgen-events-backend-b34m.onrender.com${event.imageUrl}`}
                         alt={event.title}
                         className="event-card-image-full"
                       />

@@ -119,7 +119,7 @@ function AddEvent() {
     }
   
     try {
-      const res = await axios.post("http://localhost:5000/api/events", formData);
+      const res = await axios.post("https://nextgen-events-backend-b34m.onrender.com/api/events", formData);
       toast.success("Event created successfully! 🎉");
       
       // Reset form

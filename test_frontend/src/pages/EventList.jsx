@@ -23,7 +23,7 @@ function EventList() {
   const fetchEvents = async () => {
     try {
       setLoading(true);
-      const response = await axios.get("http://localhost:5000/api/events");
+      const response = await axios.get("https://nextgen-events-backend-b34m.onrender.com/api/events");
       setEvents(response.data);
     } catch (error) {
       console.error("Error fetching events:", error);
@@ -42,7 +42,7 @@ function EventList() {
     setRegistrationLoading(prev => ({ ...prev, [eventId]: true }));
 
     try {
-      const response = await axios.post(`http://localhost:5000/api/events/${eventId}/register`, {
+      const response = await axios.post(`https://nextgen-events-backend-b34m.onrender.com/api/events/${eventId}/register`, {
         userId: user._id,
         userEmail: user.email
       });
@@ -69,7 +69,7 @@ function EventList() {
     setRegistrationLoading(prev => ({ ...prev, [eventId]: true }));
 
     try {
-      const response = await axios.delete(`http://localhost:5000/api/events/${eventId}/unregister`, {
+      const response = await axios.delete(`https://nextgen-events-backend-b34m.onrender.com/api/events/${eventId}/unregister`, {
         data: { userId: user._id }
       });
 

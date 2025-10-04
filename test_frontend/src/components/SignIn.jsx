@@ -34,12 +34,12 @@ function SignIn() {
       console.log('=== FRONTEND LOGIN ATTEMPT ===');
       console.log('Email:', email);
       console.log('Password:', password);
-      console.log('Request URL:', 'http://localhost:5000/api/signin');
+      console.log('Request URL:', 'https://nextgen-events-backend-b34m.onrender.com/api/signin');
       
       const requestData = { email, password };
       console.log('Request data:', requestData);
       
-      const response = await axios.post('http://localhost:5000/api/signin', requestData, {
+      const response = await axios.post('https://nextgen-events-backend-b34m.onrender.com/api/signin', requestData, {
         headers: {
           'Content-Type': 'application/json',
         },
@@ -86,7 +86,7 @@ function SignIn() {
     if (!email) return;
 
     try {
-      const response = await fetch('http://localhost:5000/api/forgot-password', {
+      const response = await fetch('https://nextgen-events-backend-b34m.onrender.com/api/forgot-password', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

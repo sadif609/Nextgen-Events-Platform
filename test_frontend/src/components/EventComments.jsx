@@ -23,7 +23,7 @@ function EventComments({ eventId }) {
   const fetchComments = async () => {
     try {
       setLoading(true);
-      const response = await axios.get(`http://localhost:5000/api/events/${eventId}/comments`);
+      const response = await axios.get(`https://nextgen-events-backend-b34m.onrender.com/api/events/${eventId}/comments`);
       setComments(response.data);
     } catch (error) {
       console.error('Error fetching comments:', error);
@@ -49,7 +49,7 @@ function EventComments({ eventId }) {
     setSubmitting(true);
 
     try {
-      const response = await axios.post(`http://localhost:5000/api/events/${eventId}/comments`, {
+      const response = await axios.post(`https://nextgen-events-backend-b34m.onrender.com/api/events/${eventId}/comments`, {
         userId: user._id,
         userName: user.name,
         userEmail: user.email,

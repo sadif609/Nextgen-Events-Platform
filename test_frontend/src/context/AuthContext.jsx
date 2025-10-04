@@ -73,7 +73,7 @@ export const AuthProvider = ({ children }) => {
   const handleGoogleLogin = () => {
     setAuthLoading(true);
     // Redirect to backend Google OAuth
-    window.location.href = 'http://localhost:5000/api/auth/google';
+    window.location.href = 'https://nextgen-events-backend-b34m.onrender.com/api/auth/google';
   };
 
   return (

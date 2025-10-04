@@ -22,7 +22,7 @@ function EditEvent() {
   useEffect(() => {
     const fetchEvent = async () => {
       try {
-        const response = await axios.get(`http://localhost:5000/api/events/${id}`);
+        const response = await axios.get(`https://nextgen-events-backend-b34m.onrender.com/api/events/${id}`);
         const data = response.data;
         setEventData({
           ...data,
@@ -75,7 +75,7 @@ function EditEvent() {
         formData.append("bannerUrl", eventData.bannerUrl);
       }
 
-      await axios.put(`http://localhost:5000/api/events/${id}`, formData);
+      await axios.put(`https://nextgen-events-backend-b34m.onrender.com/api/events/${id}`, formData);
       alert("Event updated successfully!");
       navigate("/my-events");
     } catch (error) {

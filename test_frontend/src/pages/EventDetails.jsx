@@ -19,7 +19,7 @@ function EventDetails() {
     const fetchEvent = async () => {
       try {
         setLoading(true);
-        const res = await axios.get(`http://localhost:5000/api/events/${id}`);
+        const res = await axios.get(`https://nextgen-events-backend-b34m.onrender.com/api/events/${id}`);
         setEvent(res.data);
       } catch (error) {
         console.error("Error fetching event:", error);
@@ -41,7 +41,7 @@ function EventDetails() {
     setRegistrationLoading(true);
 
     try {
-      const response = await axios.post(`http://localhost:5000/api/events/${id}/register`, {
+      const response = await axios.post(`https://nextgen-events-backend-b34m.onrender.com/api/events/${id}/register`, {
         userId: user._id,
         userEmail: user.email
       });
@@ -62,7 +62,7 @@ function EventDetails() {
     setRegistrationLoading(true);
 
     try {
-      const response = await axios.delete(`http://localhost:5000/api/events/${id}/unregister`, {
+      const response = await axios.delete(`https://nextgen-events-backend-b34m.onrender.com/api/events/${id}/unregister`, {
         data: { userId: user._id }
       });
 

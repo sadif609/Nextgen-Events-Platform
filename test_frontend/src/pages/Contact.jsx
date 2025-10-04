@@ -25,7 +25,7 @@ function Contact() {
     setSubmitMessage('');
 
     try {
-      const response = await axios.post('http://localhost:5000/api/contact', formData);
+      const response = await axios.post('https://nextgen-events-backend-b34m.onrender.com/api/contact', formData);
       
       if (response.data.success) {
         setSubmitMessage('✅ Message sent successfully! We\'ll get back to you soon.');
