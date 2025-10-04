@@ -1,0 +1,16 @@
+This file serves as a placeholder for the default event image.
+
+When no event image is provided, the application will fall back to a default image.
+
+To add a default image:
+1. Place your default event image file in this public directory
+2. Name it 'default-event-image.jpg' 
+3. The image will automatically be used when events don't have specific images
+
+Recommended image specifications:
+- Format: JPG, PNG, or WebP
+- Dimensions: 1200x600 pixels (2:1 aspect ratio)
+- File size: Under 500KB for optimal loading
+- Content: Generic event/celebration themed image
+
+Alternative: You can also use an online placeholder service by updating the fallback URL in imageUtils.js
