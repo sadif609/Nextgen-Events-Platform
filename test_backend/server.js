@@ -14,10 +14,17 @@ require("dotenv").config();
 
 const app = express();
 
-// Middleware - Allow all origins in development
+// Middleware - CORS configuration for production
+// Middleware - CORS configuration for production
 app.use(cors({
-  origin: true, // Allow all origins in development
-  credentials: true
+  origin: [
+    'https://nextgen-events-platform.onrender.com',
+    'http://localhost:3000', // For local development
+    'http://localhost:5173'  // For Vite dev server
+  ],
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With']
 }));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
